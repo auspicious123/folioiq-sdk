@@ -198,3 +198,5 @@ Model = extractor.build_model(spec)
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+Maintainers: see [PUBLISH.md](PUBLISH.md) to release a new PyPI version.
