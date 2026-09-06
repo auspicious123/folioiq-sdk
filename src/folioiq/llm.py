@@ -29,7 +29,7 @@ class AzureOpenAIClient:
                 ("AZURE_API_KEY", self.settings.azure_api_key),
                 ("AZURE_API_BASE", self.settings.azure_api_base),
                 ("AZURE_API_VERSION", self.settings.azure_api_version),
-                ("FOLIOIQ_AZURE_MODEL / model", self.settings.azure_deployment),
+                ("model / AZURE_OPENAI_DEPLOYMENT", self.settings.azure_deployment),
             ]
             if not value
         ]

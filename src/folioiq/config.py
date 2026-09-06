@@ -25,9 +25,9 @@ class FolioIQSettings(BaseSettings):
     azure_deployment: str | None = Field(
         default=None,
         validation_alias=AliasChoices(
-            "FOLIOIQ_AZURE_MODEL",
-            "AZURE_OPENAI_DEPLOYMENT",
             "model",
+            "AZURE_OPENAI_DEPLOYMENT",
+            "FOLIOIQ_AZURE_MODEL",  # legacy alias
         ),
     )
 
