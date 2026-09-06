@@ -8,8 +8,27 @@ version = "0.1.0"
 description = "Schema-driven document extraction with pluggable providers"
 readme = "README.md"
 requires-python = ">=3.12"
-license = { text = "Proprietary" }
-authors = [{ name = "FolioIQ" }]
+license = { text = "MIT" }
+authors = [
+    { name = "auspicious123", email = "auspicious123@users.noreply.github.com" },
+]
+keywords = [
+    "document-extraction",
+    "llm",
+    "ocr",
+    "pdf",
+    "azure",
+    "pydantic",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 dependencies = [
     "pydantic>=2.0",
     "pydantic-settings>=2.0",
@@ -26,13 +45,17 @@ azure = [
 ]
 dev = [
     "pytest>=8.0",
+    "build>=1.0",
+    "twine>=5.0",
 ]
 
 [project.scripts]
 folioiq-eval = "folioiq.eval:main"
 
 [project.urls]
-Homepage = "https://github.com/local/folioiq-sdk"
+Homepage = "https://github.com/auspicious123/folioiq-sdk"
+Repository = "https://github.com/auspicious123/folioiq-sdk"
+Issues = "https://github.com/auspicious123/folioiq-sdk/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/folioiq"]
