@@ -1,0 +1,35 @@
+name: contract
+version: "1.0"
+
+document:
+  allowed_types: [pdf]
+
+pipeline:
+  mode: auto
+
+extraction:
+  fields:
+    contract_number:
+      type: string
+      required: true
+      description: Agreement / MSA number.
+    effective_date:
+      type: string
+      required: false
+      description: Effective date as printed.
+    expiry_date:
+      type: string
+      required: false
+      description: Expiry / end date as printed.
+    vendor_name:
+      type: string
+      required: true
+      description: Supplier / seller name.
+    customer_name:
+      type: string
+      required: true
+      description: Customer / buyer name.
+    currency:
+      type: string
+      required: false
+      description: Currency if stated (ISO code).

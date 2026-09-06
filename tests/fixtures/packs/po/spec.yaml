@@ -1,0 +1,35 @@
+name: purchase_order
+version: "1.0"
+
+document:
+  allowed_types: [pdf]
+
+pipeline:
+  mode: auto
+
+extraction:
+  fields:
+    po_number:
+      type: string
+      required: true
+      description: Purchase order number as printed (e.g. 4500198872).
+    po_date:
+      type: string
+      required: false
+      description: PO date as printed.
+    currency:
+      type: string
+      required: true
+      description: ISO currency code (e.g. EUR).
+    vendor_name:
+      type: string
+      required: true
+      description: Supplier / vendor name.
+    customer_name:
+      type: string
+      required: false
+      description: Buyer / customer name.
+    total_amount:
+      type: number
+      required: false
+      description: Document grand total as a number.

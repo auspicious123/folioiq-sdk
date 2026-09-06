@@ -1,0 +1,27 @@
+name: delivery_receipt
+version: "1.0"
+
+document:
+  allowed_types: [pdf, png, jpg, jpeg]
+
+pipeline:
+  mode: auto
+
+extraction:
+  fields:
+    po_number:
+      type: string
+      required: false
+      description: Related purchase order number if printed.
+    dr_number:
+      type: string
+      required: false
+      description: Delivery receipt / delivery note number.
+    vendor_name:
+      type: string
+      required: false
+      description: Vendor / shipper name.
+    customer_name:
+      type: string
+      required: false
+      description: Customer / consignee name.

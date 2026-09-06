@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "folioiq"
+version = "0.1.0"
+description = "Schema-driven document extraction with pluggable providers"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Proprietary" }
+authors = [{ name = "FolioIQ" }]
+dependencies = [
+    "pydantic>=2.0",
+    "pydantic-settings>=2.0",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0",
+    "pymupdf>=1.24.0",
+]
+
+[project.optional-dependencies]
+azure = [
+    "langchain-openai>=0.2.0",
+    "langchain-core>=0.3.0",
+    "azure-ai-documentintelligence>=1.0.0",
+]
+dev = [
+    "pytest>=8.0",
+]
+
+[project.scripts]
+folioiq-eval = "folioiq.eval:main"
+
+[project.urls]
+Homepage = "https://github.com/local/folioiq-sdk"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/folioiq"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src/folioiq" = "folioiq"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

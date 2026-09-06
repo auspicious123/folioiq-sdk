@@ -1,0 +1,39 @@
+name: sales_order
+version: "1.0"
+
+document:
+  allowed_types: [pdf]
+
+pipeline:
+  mode: auto
+
+extraction:
+  fields:
+    so_number:
+      type: string
+      required: true
+      description: Sales order number (e.g. SO-2026-07741).
+    so_date:
+      type: string
+      required: false
+      description: Sales order date as printed.
+    po_number:
+      type: string
+      required: false
+      description: Customer PO reference.
+    currency:
+      type: string
+      required: true
+      description: ISO currency code.
+    supplier_name:
+      type: string
+      required: true
+      description: Supplier / issuer name.
+    customer_name:
+      type: string
+      required: false
+      description: Customer / buyer name.
+    total_amount:
+      type: number
+      required: false
+      description: Order grand total as a number.

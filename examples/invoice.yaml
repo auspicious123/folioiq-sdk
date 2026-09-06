@@ -1,0 +1,64 @@
+name: invoice
+version: "1.0"
+
+document:
+  allowed_types:
+    - pdf
+    - png
+    - jpg
+
+pipeline:
+  mode: auto
+
+extraction:
+  fields:
+    invoice_number:
+      type: string
+      required: true
+      description: >
+        Unique invoice identifier assigned by the supplier.
+
+    invoice_date:
+      type: date
+      required: true
+      description: Date the invoice was issued.
+
+    vendor_name:
+      type: string
+      required: true
+      description: Legal or trading name of the supplier.
+
+    po_number:
+      type: string
+      required: false
+      description: Purchase order number referenced by the invoice, if any.
+
+    currency:
+      type: string
+      required: true
+      description: ISO currency code (e.g. USD, PHP, INR).
+
+    total_amount:
+      type: number
+      required: true
+      description: Invoice grand total (not subtotal).
+
+    line_items:
+      type: array
+      required: false
+      description: Line items on the invoice.
+      items:
+        type: object
+        fields:
+          description:
+            type: string
+            required: false
+          quantity:
+            type: number
+            required: false
+          unit_price:
+            type: number
+            required: false
+          amount:
+            type: number
+            required: false

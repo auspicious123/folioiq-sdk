@@ -1,0 +1,24 @@
+name: invoice
+version: "1.0"
+
+document:
+  allowed_types:
+    - pdf
+    - png
+    - jpg
+
+# Force Azure DI even for digital PDFs (optional)
+pipeline:
+  mode: explicit
+  parser: azure_di
+
+extraction:
+  fields:
+    invoice_number:
+      type: string
+      required: true
+      description: Invoice id
+    total_amount:
+      type: number
+      required: false
+      description: Grand total
